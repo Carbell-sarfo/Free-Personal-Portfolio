@@ -23,6 +23,7 @@
 html {
     height: 100%;
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 
@@ -226,6 +227,83 @@ img {
     text-align: center;
 }
 /* end of utility classes */
+
+
+
+
+
+
+
+
+
+
+
+/* =================================================================================== */
+/*                                      navigation                                    */
+/* =================================================================================== */
+.nav-bar {
+    width: 100%;
+    height: 80px;
+    background-color: var(--clr-white);
+    box-shadow: 0 .1rem .3rem rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.nav-bar .nav-container  {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* navigation button */
+.nav-btn {
+    cursor: pointer;
+    transition: .4s;
+}
+.nav-btn .lines {
+    width: 3.5rem;
+    height: .4rem;
+    background-color: var(--clr-yellow);
+    border-radius: 1rem;
+    transition: .4s;
+}
+.nav-btn .lines:not(:last-child) {
+    margin-bottom: .6rem;
+}
+
+.nav-btn.close .lines:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 6px);
+}
+.nav-btn.close .lines:nth-child(2) {
+    opacity: 0;
+}
+.nav-btn.close .lines:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -6px);
+}
+
+
+
+
+/* nav-logo */
+.nav-bar .logo {
+    width: 100px;
+}
+
+
+
+/* End of navigation */
+
+
+
+
+
+
+
+
 
 
 
@@ -510,6 +588,51 @@ img {
     }
 
 
+    
+    /* navigation */
+
+    .nav-btn {
+        display: none;
+    }
+
+    /* nav-list  */
+    .nav-list {
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+    .nav-list .nav-item:not(:last-child) {
+        margin-right: 2rem;
+    }
+    .nav-list .nav-link {
+        text-decoration: none;
+        color: var(--clr-text);
+        font-size: 1.8rem;
+        font-weight: bold;
+        display: inline-block;
+        padding: 1rem;
+        position: relative;
+        z-index: 1;
+    }
+    .nav-list .nav-link:hover::after {
+        transform: scale(1);
+    }
+    .nav-list .nav-link::after {
+        content: "";
+        width: 100%;
+        height: .4rem;
+        background-color: var(--clr-yellow);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 1rem;
+        transform: scale(0);
+        transform-origin: left;
+        transition: .4s;
+    }
+
+
+
     /* section footer cta */
     /* footer cta */
     .section-footer .footer-cta {
@@ -518,3 +641,66 @@ img {
 
 }
 /* End of large screens */
+
+
+
+
+
+@media screen and (max-width: 1023px) {
+
+    .nav-overlay {
+        display: inline-block;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        pointer-events: none;
+        opacity: 0;
+    }
+    .nav-overlay.show {
+        opacity: 1;
+        pointer-events: initial;
+        background-color: rgba(0, 0, 0, 0.403);
+        backdrop-filter: blur(3px);
+    }
+
+    /* navigation */
+    .nav-list {
+        width: 100%;
+        min-height: 60vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 142, 218, 0.9);
+        box-shadow: 0 .3rem .3rem rgba(0, 0, 0, 0.188);
+        z-index: -1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 0 0 2rem 2rem;
+        transition: .4s ease-in-out;
+        transform: translate3d(0, -110%, 0);
+    }
+    .nav-list.show {
+        transform: translate3d(0, 0%, 0);
+    }
+    .nav-list .nav-item:not(:last-child) {
+        margin-bottom: 1.5rem;
+    }
+    .nav-list .nav-link {
+        text-decoration: none;
+        display: inline-block;
+        color: #ffff;
+        padding: 1.5rem 3rem;
+        border-radius: 1rem;
+        transition: .4s;
+    }
+    .nav-list .nav-link:hover,
+    .nav-list .nav-link:focus {
+        background-color: #fff;
+        color: #008FDA;
+    }
+}
