@@ -1,6 +1,6 @@
 # BUILDING YOUR PORTFOLIO WEBSITE SHOULD NOT BE THAT DIFFICULT
 
-![Uploading Desktop - 1.png…]()
+<img width="1440" alt="Desktop - 1" src="https://github.com/Carbell-sarfo/Free-Personal-Portfolio/assets/51845903/b87e46bb-f5a8-424b-8a64-d7b9e1495b6b">
 
 
 
