@@ -10,7 +10,7 @@ let showMenu = false;
 
 // have navigation listen to click events
 navBtn.addEventListener("click", openMenu);
-
+navOverlay.addEventListener("click", openMenu);
 
 function openMenu() {
     // when the button is clicked and showmenu is "false"

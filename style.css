@@ -63,6 +63,13 @@ img {
     padding-right: 20px;
     padding-left: 20px;
 }
+section,
+footer,
+nav {
+    position: relative;
+    overflow: hidden;
+}
+
 
 .col-2 {
     display: grid;
@@ -226,7 +233,58 @@ img {
 .text-center {
     text-align: center;
 }
+
+
+/* position */
+.t0 {
+    top: 0;
+}
+.b0 {
+    bottom: 0;
+}
+.l0 {
+    left: 0;
+}
+.r0 {
+    right: 0;
+}
+
 /* end of utility classes */
+
+
+
+
+
+
+
+
+
+
+
+/* ==================== Blurry Background items ============= */
+.blue-element,
+.yellow-element {
+    width: clamp(5rem, 20vw, 20rem);
+    height: clamp(5rem, 20vw, 20rem);
+    border-radius: 50%;
+    filter: blur(129px);
+    opacity: .3;
+    position: absolute;
+    z-index: 1;
+}
+.blue-element {
+    background-color: var(--clr-blue);
+}
+.yellow-element {
+    background-color: var(--clr-yellow);
+}
+/* End of bluring background items */
+
+
+
+
+
+
 
 
 
